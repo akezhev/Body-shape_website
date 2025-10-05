@@ -16,3 +16,35 @@
 @import "./blocks/contacts.css";
 @import "./blocks/form.css";
 @import "./blocks/footer.css";
+
+/* scrollToTopBtn */
+#scrollToTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: #ffd479;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  box-shadow: 10px 11px 41px 8px rgba(0, 0, 0, 0.68);
+  -webkit-box-shadow: 10px 11px 41px 8px rgba(0, 0, 0, 0.68);
+  -moz-box-shadow: 10px 11px 41px 8px rgba(0, 0, 0, 0.68);
+}
+
+#scrollToTopBtn.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+#scrollToTopBtn:hover {
+  background-color: #ffb414;
+  transform: scale(1.2);
+}
