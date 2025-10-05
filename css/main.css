@@ -17,6 +17,11 @@
 @import "./blocks/form.css";
 @import "./blocks/footer.css";
 
+/* smooth scrolling for anchor links*/
+html {
+  scroll-behavior: smooth;
+}
+
 /* scrollToTopBtn */
 #scrollToTopBtn {
   position: fixed;
@@ -48,6 +53,5 @@
   background-color: #ffb414;
   transform: scale(1.2);
 }
-html {
-  scroll-behavior: smooth;
-}
+
+/* popap */
