@@ -29,7 +29,7 @@
           <ul class="header-nav">
             <li><a href="#instructors">Инструкторы</a></li>
             <li><a href="#sections">Секции</a></li>
-            <li><a href="#!">Новости</a></li>
+            <li><a href="#section-beast">Записаться</a></li>
             <li><a href="#contacts">Контакты</a></li>
           </ul>
         </nav>
@@ -140,7 +140,7 @@
         </div>
       </section>
 
-      <section class="section-beast">
+      <section id="section-beast" class="section-beast">
         <div class="container">
           <h2 class="section-beast-title">РЕЖИМ ЗВЕРЯ</h2>
           <div class="section-beast-desc">
@@ -152,7 +152,7 @@
             </p>
           </div>
           <div class="section-beast-btn-wrapper">
-            <a href="#!" class="button">ЗАПИСАТЬСЯ</a>
+            <a id="openPopup" href="#!" class="button">ЗАПИСАТЬСЯ</a>
           </div>
         </div>
       </section>
@@ -312,6 +312,156 @@
     <!-- scrollToTopBtn -->
     <button id="scrollToTopBtn" title="Вернуться наверх">↑</button>
 
+    <!-- popup -->
+    <div class="popup-overlay" id="popupOverlay">
+      <div class="popup-container">
+        <div class="popup-header">
+          <div class="popup-title">
+            <div class="popup-icon">💪</div>
+            <div>
+              <h2>Запись на тренировку</h2>
+              <p>Заполните форму и наш тренер свяжется с вами</p>
+            </div>
+          </div>
+          <button class="popup-close" id="closePopup">&times;</button>
+        </div>
+
+        <div class="popup-content">
+          <div class="form-side">
+            <form id="trainingForm">
+              <div class="form-group">
+                <label for="name">Ваше имя *</label>
+                <input type="text" id="name" name="name" required />
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Телефон *</label>
+                <input type="tel" id="phone" name="phone" required />
+                <div class="form-note">Формат: +7 (XXX) XXX-XX-XX</div>
+              </div>
+              <!-- 
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" />
+              </div> -->
+
+              <div class="form-group">
+                <label for="trainingType">Тип тренировки *</label>
+                <select id="trainingType" name="trainingType" required>
+                  <option value="">Выберите тип тренировки</option>
+                  <option value="yoga">Йога</option>
+                  <option value="fitness">Фитнес</option>
+                  <option value="crossfit">Кроссфит</option>
+                  <option value="pilates">Пилатес</option>
+                  <option value="strength">Силовые тренировки</option>
+                  <option value="cardio">Кардио тренировки</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="date">Предпочтительная дата *</label>
+                <input type="date" id="date" name="date" required min="" />
+              </div>
+
+              <div class="form-group">
+                <label for="time">Предпочтительное время *</label>
+                <input type="time" id="time" name="time" required />
+              </div>
+
+              <div class="form-group">
+                <label for="message">Дополнительная информация</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="3"
+                  placeholder="Опыт тренировок, цели, пожелания..."
+                ></textarea>
+              </div>
+
+              <!-- Honeypot поле для защиты от спама -->
+              <div class="form-group honeypot-field">
+                <label for="website">Веб-сайт</label>
+                <input
+                  type="text"
+                  id="website"
+                  name="website"
+                  tabindex="-1"
+                  autocomplete="off"
+                />
+              </div>
+
+              <div class="checkbox-group">
+                <input type="checkbox" id="consent" name="consent" required />
+                <label for="consent"
+                  >Я согласен на обработку персональных данных и с политикой
+                  конфиденциальности</label
+                >
+              </div>
+
+              <!-- reCAPTCHA -->
+              <div class="recaptcha-container">
+                <div
+                  class="g-recaptcha"
+                  data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+                ></div>
+              </div>
+
+              <button type="submit" id="submitBtn">
+                <span class="spinner" id="spinner"></span>
+                Записаться на тренировку
+              </button>
+
+              <div id="messageContainer" class="message"></div>
+            </form>
+          </div>
+
+          <div class="info-side">
+            <h2 class="info-title">Почему стоит тренироваться с нами?</h2>
+            <ul class="benefits">
+              <li>
+                <i>✅</i>
+                <div>
+                  <strong>Профессиональные тренеры</strong>
+                  <p>Сертифицированные специалисты с опытом работы от 5 лет</p>
+                </div>
+              </li>
+              <li>
+                <i>✅</i>
+                <div>
+                  <strong>Индивидуальный подход</strong>
+                  <p>Программа тренировок, разработанная специально для вас</p>
+                </div>
+              </li>
+              <li>
+                <i>✅</i>
+                <div>
+                  <strong>Современное оборудование</strong>
+                  <p>
+                    Новейшие тренажеры и инвентарь для эффективных тренировок
+                  </p>
+                </div>
+              </li>
+              <li>
+                <i>✅</i>
+                <div>
+                  <strong>Гибкий график</strong>
+                  <p>Возможность выбрать удобное время для занятий</p>
+                </div>
+              </li>
+            </ul>
+
+            <div class="contact-info">
+              <h3>Контакты</h3>
+              <p>📞 +7 (999) 123-45-67</p>
+              <p>📧 info@fitnessstudio.ru</p>
+              <p>📍 г. Москва, ул. Спортивная, 15</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="./js/scrollToTopBtn.js"></script>
+    <script src="./js/popupFormSingUp.js"></script>
   </body>
 </html>

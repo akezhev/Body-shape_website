@@ -16,6 +16,7 @@
 @import "./blocks/contacts.css";
 @import "./blocks/form.css";
 @import "./blocks/footer.css";
+@import "./blocks/popupForm.css";
 
 /* smooth scrolling for anchor links*/
 html {
@@ -54,4 +55,4 @@ html {
   transform: scale(1.2);
 }
 
-/* popap */
+/* popup */
