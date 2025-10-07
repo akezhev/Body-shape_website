@@ -52,6 +52,7 @@
   justify-content: space-between;
   align-items: center;
 
+  font-size: 20px;
   padding: 20px 30px;
   border-bottom: 1px solid #eaeaea;
 
@@ -144,7 +145,7 @@ select,
 
   font-size: 12px;
   transition: all 0.2s ease-in;
-  background-color: white;
+  background-color: #ffffff7f;
 }
 
 input:focus,
@@ -255,7 +256,8 @@ select:focus,
 
 .info-title {
   font-size: 22px;
-  margin-bottom: 20px;
+
+  margin-bottom: 15px;
 }
 
 .benefits {
@@ -307,10 +309,4 @@ select:focus,
   .popup-container {
     max-height: 95vh;
   }
-}
-
-.form-note {
-  font-size: 13px;
-  color: var(--gray);
-  margin-top: 5px;
 }
