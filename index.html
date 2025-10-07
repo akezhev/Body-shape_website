@@ -329,15 +329,27 @@
         <div class="popup-content">
           <div class="form-side">
             <form id="trainingForm">
-              <div class="form-group">
-                <label for="name">Ваше имя *</label>
-                <input type="text" id="name" name="name" required />
+              <div class="popup__form-group">
+                <label class="popup__label" for="name">Ваше имя *</label>
+                <input
+                  class="popup__input"
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                />
               </div>
 
-              <div class="form-group">
-                <label for="phone">Телефон *</label>
-                <input type="tel" id="phone" name="phone" required />
-                <div class="form-note">Формат: +7 (XXX) XXX-XX-XX</div>
+              <div class="popup__form-group">
+                <label class="popup__label" for="phone">Телефон *</label>
+                <input
+                  class="popup__input"
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  required
+                />
+                <div class="form-note">формат: +7 (XXX) XXX-XX-XX</div>
               </div>
               <!-- 
               <div class="form-group">
@@ -345,8 +357,10 @@
                 <input type="email" id="email" name="email" />
               </div> -->
 
-              <div class="form-group">
-                <label for="trainingType">Тип тренировки *</label>
+              <div class="popup__form-group">
+                <label class="popup__label" for="trainingType"
+                  >Тип тренировки *</label
+                >
                 <select id="trainingType" name="trainingType" required>
                   <option value="">Выберите тип тренировки</option>
                   <option value="yoga">Йога</option>
@@ -358,30 +372,53 @@
                 </select>
               </div>
 
-              <div class="form-group">
-                <label for="date">Предпочтительная дата *</label>
-                <input type="date" id="date" name="date" required min="" />
+              <div class="popup__date-time">
+                <div class="popup__form-group">
+                  <label class="popup__label" for="date"
+                    >Предпочтительная дата *</label
+                  >
+                  <input
+                    class="popup__input"
+                    type="date"
+                    id="date"
+                    name="date"
+                    required
+                    min=""
+                  />
+                </div>
+
+                <div class="popup__form-group">
+                  <label class="popup__label" for="time"
+                    >Предпочтительное время *</label
+                  >
+                  <input
+                    class="popup__input"
+                    type="time"
+                    id="time"
+                    name="time"
+                    required
+                  />
+                </div>
               </div>
 
-              <div class="form-group">
-                <label for="time">Предпочтительное время *</label>
-                <input type="time" id="time" name="time" required />
-              </div>
-
-              <div class="form-group">
-                <label for="message">Дополнительная информация</label>
+              <!-- <div class="popup__form-group">
+                <label class="popup__label" for="message"
+                  >Дополнительная информация</label
+                >
                 <textarea
+                  class="popup__textarea"
                   id="message"
                   name="message"
                   rows="3"
                   placeholder="Опыт тренировок, цели, пожелания..."
                 ></textarea>
-              </div>
+              </div> -->
 
               <!-- Honeypot поле для защиты от спама -->
-              <div class="form-group honeypot-field">
-                <label for="website">Веб-сайт</label>
+              <div class="popup__form-group honeypot-field">
+                <label class="popup__label" for="website">Веб-сайт</label>
                 <input
+                  class="popup__input"
                   type="text"
                   id="website"
                   name="website"
@@ -391,8 +428,14 @@
               </div>
 
               <div class="checkbox-group">
-                <input type="checkbox" id="consent" name="consent" required />
-                <label for="consent"
+                <input
+                  class="popup__input"
+                  type="checkbox"
+                  id="consent"
+                  name="consent"
+                  required
+                />
+                <label class="popup__label" for="consent"
                   >Я согласен на обработку персональных данных и с политикой
                   конфиденциальности</label
                 >
@@ -406,7 +449,7 @@
                 ></div>
               </div>
 
-              <button type="submit" id="submitBtn">
+              <button class="popup__btn-sucsses" type="submit" id="submitBtn">
                 <span class="spinner" id="spinner"></span>
                 Записаться на тренировку
               </button>

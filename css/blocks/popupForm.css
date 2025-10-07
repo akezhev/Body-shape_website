@@ -119,37 +119,44 @@
   font-size: 15px;
 }
 
-.form-group {
+.popup__form-group {
   margin-bottom: 18px;
   position: relative;
 }
 
-label {
+.popup__label {
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 5px;
   font-weight: 600;
   color: var(--dark);
-  font-size: 14px;
+  font-size: 12px;
 }
 
-input,
+.popup__input,
 select,
-textarea {
+.popup__textarea {
   width: 100%;
-  padding: 12px 15px;
+  padding: 8px;
   border: 2px solid #e1e5ee;
+
+  border: none;
   border-radius: 8px;
-  font-size: 15px;
+
+  font-size: 12px;
   transition: all 0.2s ease-in;
   background-color: white;
 }
 
 input:focus,
 select:focus,
-textarea:focus {
+.popup__textarea:focus {
   outline: none;
-  border-color: var(--primary);
   box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+}
+.popup__date-time {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .honeypot-field {
@@ -182,8 +189,8 @@ textarea:focus {
   justify-content: center;
 }
 
-button[type="submit"] {
-  background: var(--primary);
+.popup__btn-sucsses[type="submit"] {
+  background-color: #333333;
   color: white;
   border: none;
   padding: 14px 20px;
@@ -195,12 +202,12 @@ button[type="submit"] {
   transition: var(--transition);
 }
 
-button[type="submit"]:hover {
+.popup__btn-sucsses[type="submit"]:hover {
   background: var(--primary-dark);
   transform: translateY(-2px);
 }
 
-button[type="submit"]:disabled {
+.popup__btn-sucsses[type="submit"]:disabled {
   background: var(--gray);
   cursor: not-allowed;
   transform: none;
