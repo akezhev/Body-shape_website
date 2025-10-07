@@ -226,6 +226,7 @@ select:focus,
   border-top-color: white;
   animation: spin 1s ease-in-out infinite;
   margin-right: 10px;
+  vertical-align: bottom;
 }
 
 @keyframes spin {
