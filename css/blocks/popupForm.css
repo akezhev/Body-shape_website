@@ -101,7 +101,7 @@
 
 .form-side {
   flex: 1;
-  padding: 30px;
+  padding: 20px 30px;
 }
 
 .info-side {
@@ -126,7 +126,7 @@
 
 .popup__label {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 3px;
   font-weight: 600;
   color: var(--dark);
   font-size: 12px;
@@ -193,17 +193,20 @@ select:focus,
   background-color: #333333;
   color: white;
   border: none;
-  padding: 14px 20px;
+  padding: 12px 15px;
   border-radius: 8px;
+
+  vertical-align: center;
   font-size: 16px;
   font-weight: 600;
+
   cursor: pointer;
   width: 100%;
   transition: var(--transition);
 }
 
 .popup__btn-sucsses[type="submit"]:hover {
-  background: var(--primary-dark);
+  background-color: #737373;
   transform: translateY(-2px);
 }
 
