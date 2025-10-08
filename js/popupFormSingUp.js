@@ -70,7 +70,6 @@ document.addEventListener("DOMContentLoaded", function () {
     try {
       // Имитация отправки на сервер
       await submitForm();
-
       // Показать сообщение об успехе
       showMessage(
         "Спасибо! Ваша заявка принята. Мы свяжемся с вами в ближайшее время для подтверждения записи.",
@@ -150,7 +149,6 @@ document.addEventListener("DOMContentLoaded", function () {
       );
       return false;
     }
-
     return true;
   }
 
@@ -214,7 +212,6 @@ document.addEventListener("DOMContentLoaded", function () {
     if (value.length > 15) {
       value = value.slice(0, 15) + "-" + value.slice(15, 17);
     }
-
     e.target.value = value;
   });
 });
