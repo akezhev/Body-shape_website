@@ -39,7 +39,6 @@
   transform: scale(0.9);
   opacity: 0;
   transition: var(--transition);
-  box-shadow: var(--shadow);
 }
 
 .popup-overlay.active .popup-container {
@@ -52,7 +51,7 @@
   justify-content: space-between;
   align-items: center;
 
-  font-size: 20px;
+  font-size: 18px;
   padding: 20px 30px;
   border-bottom: 1px solid #eaeaea;
 
@@ -115,13 +114,13 @@
 }
 
 .subtitle {
-  color: var(--gray);
+  color: var(--accent);
   margin-bottom: 25px;
   font-size: 15px;
 }
 
 .popup__form-group {
-  margin-bottom: 18px;
+  margin-bottom: 15px;
   position: relative;
 }
 
@@ -148,12 +147,12 @@ select,
   background-color: #ffffff7f;
 }
 
-input:focus,
-select:focus,
-.popup__textarea:focus {
+.popup__input:focus,
+select:focus {
   outline: none;
   box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
 }
+
 .popup__date-time {
   display: flex;
   justify-content: space-between;
@@ -192,12 +191,11 @@ select:focus,
 
 .popup__btn-sucsses[type="submit"] {
   background-color: #333333;
-  color: white;
+  color: var(--accent);
   border: none;
   padding: 12px 15px;
   border-radius: 8px;
 
-  vertical-align: center;
   font-size: 16px;
   font-weight: 600;
 
@@ -207,6 +205,7 @@ select:focus,
 }
 
 .popup__btn-sucsses[type="submit"]:hover {
+  color: white;
   background-color: #737373;
   transform: translateY(-2px);
 }
@@ -221,11 +220,13 @@ select:focus,
   display: inline-block;
   width: 20px;
   height: 20px;
+  margin-right: 10px;
+
   border: 3px solid rgba(255, 255, 255, 0.3);
   border-radius: 50%;
-  border-top-color: white;
+  border-top-color: var(--accent);
+
   animation: spin 1s ease-in-out infinite;
-  margin-right: 10px;
   vertical-align: bottom;
 }
 
@@ -256,7 +257,7 @@ select:focus,
 }
 
 .info-title {
-  font-size: 22px;
+  font-size: 18px;
 
   margin-bottom: 15px;
 }

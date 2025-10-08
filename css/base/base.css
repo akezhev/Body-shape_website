@@ -5,6 +5,9 @@
   --font-accent: "Bebas Neue", sans-serif;
   --shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   --transition: all 0.3s ease;
+
+  --error: #ff3333;
+  --success: #4bb543;
 }
 
 body {
