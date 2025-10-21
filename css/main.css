@@ -56,3 +56,81 @@ html {
 }
 
 /* popup */
+
+/* music player */
+@font-face {
+  font-family: "BullyGirl";
+  src: url("https://fonts.cdnfonts.com/css/bully-girl") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "BullyGirl", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Helvetica, Arial, sans-serif;
+}
+
+.audio-button-container {
+  width: 100%;
+}
+
+.audio-button {
+  background: linear-gradient(135deg, #ffb414 0%, #ba8003 100%);
+  color: white;
+  border: none;
+  padding: 10px 16px; /* Уменьшенный padding */
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 0;
+  font-size: 20px; /* Уменьшенный размер шрифта */
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
+  height: 60px; /* Фиксированная высота */
+  font-family: "BullyGirl", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Helvetica, Arial, sans-serif;
+}
+
+.button-icon {
+  font-size: 24px; /* Уменьшенный размер иконки */
+  display: inline-block;
+  width: 24px;
+  text-align: center;
+}
+
+.audio-button:hover {
+  background: linear-gradient(135deg, #ffb414 0%, #ba8003 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.audio-button.playing {
+  background: linear-gradient(135deg, #5f27cd 0%, #341f97 100%);
+}
+
+.audio-button.playing .button-icon {
+  content: "❚❚";
+}
+
+.error-message {
+  color: #ff4757;
+  margin-top: 8px;
+  display: none;
+  padding: 0 15px;
+  font-size: 14px;
+}
+
+/* iOS specific fixes */
+@supports (-webkit-touch-callout: none) {
+  .audio-button {
+    padding: 10px 18px;
+  }
+}

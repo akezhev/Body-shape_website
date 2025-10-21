@@ -16,6 +16,21 @@
 
   <body>
     <header class="header">
+      <div class="audio-button-container">
+        <button class="audio-button" id="custom-audio-button">
+          <span class="button-icon">▶</span>
+          <span class="button-text">Включите музыку</span>
+        </button>
+        <!-- Используем MP3 для лучшей совместимости с iOS -->
+        <audio id="custom-audio" preload="auto">
+          <source
+            src="https://dl.dropbox.com/scl/fi/fh716mki81oplfm08ieu1/Maurice_Jarre_-_Unchained_Melody_Orchestral_63167491.mp3?rlkey=ooq7myg6q1lembrgyb5n0sol9&st=l9guavm1&dl=0"
+            type="audio/mpeg"
+          />
+          Ваш браузер не поддерживает аудио элемент.
+        </audio>
+        <div id="error-message" class="error-message"></div>
+      </div>
       <div class="container">
         <nav class="header-row">
           <a href="#!" class="header-logo">
@@ -486,7 +501,7 @@
         </div>
       </div>
     </div>
-
+    <script src="musicPlayer.js"></script>
     <script src="./js/scrollToTopBtn.js"></script>
     <script src="./js/popupFormSingUp.js"></script>
   </body>
