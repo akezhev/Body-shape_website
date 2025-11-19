@@ -2,6 +2,7 @@ const audioButton = document.getElementById("custom-audio-button");
 const audio = document.getElementById("custom-audio");
 const errorMessage = document.getElementById("error-message");
 const buttonText = document.querySelector(".button-text");
+const buttonIcon = audioButton.querySelector(".button-icon"); // ВЫНЕСЛИ В ОТДЕЛЬНУЮ ПЕРЕМЕННУЮ
 
 // Обработчик клика
 audioButton.addEventListener("click", function (e) {
@@ -13,8 +14,8 @@ audioButton.addEventListener("click", function (e) {
       .play()
       .then(() => {
         audioButton.classList.add("playing");
-        audioButton.querySelector(".button-icon").textContent = "❚❚";
-        buttonText.textContent = "Пауза"; // Изменяем текст на "пауза"
+        buttonIcon.textContent = "❚❚"; // ИСПОЛЬЗУЕМ ПЕРЕМЕННУЮ
+        buttonText.textContent = "Пауза";
         errorMessage.style.display = "none";
       })
       .catch((e) => {
@@ -29,8 +30,8 @@ audioButton.addEventListener("click", function (e) {
   } else {
     audio.pause();
     audioButton.classList.remove("playing");
-    audioButton.querySelector(".button-icon").textContent = "▶";
-    buttonText.textContent = "Включите музыку"; // Возвращаем исходный текст
+    buttonIcon.textContent = "▶"; // ИСПОЛЬЗУЕМ ПЕРЕМЕННУЮ
+    buttonText.textContent = "Включите музыку";
   }
 
   // Небольшая задержка для iOS
@@ -42,8 +43,8 @@ audioButton.addEventListener("click", function (e) {
 // Сброс при окончании
 audio.addEventListener("ended", function () {
   audioButton.classList.remove("playing");
-  audioButton.querySelector(".button-icon").textContent = "▶";
-  buttonText.textContent = "Включите музыку"; // Возвращаем исходный текст
+  buttonIcon.textContent = "▶"; // ИСПОЛЬЗУЕМ ПЕРЕМЕННУЮ
+  buttonText.textContent = "Включите музыку";
 });
 
 // Обработка изменения видимости страницы (для паузы при сворачивании)
@@ -51,7 +52,21 @@ document.addEventListener("visibilitychange", function () {
   if (document.hidden && !audio.paused) {
     audio.pause();
     audioButton.classList.remove("playing");
-    audioButton.querySelector(".button-icon").textContent = "▶";
-    buttonText.textContent = "Включите музыку"; // Возвращаем исходный текст
+    buttonIcon.textContent = "▶"; // ИСПОЛЬЗУЕМ ПЕРЕМЕННУЮ
+    buttonText.textContent = "Включите музыку";
   }
 });
+
+//---------------------------Добавлена проверка существования элементов (в коде выше это не показано, но рекомендуется добавить):---------------------------------
+if (!audioButton || !audio || !errorMessage || !buttonText) {
+  console.error("Не все необходимые элементы найдены в DOM");
+  return;
+}
+
+// ------------------------Добавьте обработку ошибки загрузки аудио:------------------------------------
+audio.addEventListener("error", function () {
+  errorMessage.textContent = "Ошибка загрузки аудиофайла";
+  errorMessage.style.display = "block";
+});
+
+//-------------------------------------------------------------
