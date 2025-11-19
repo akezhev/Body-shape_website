@@ -3,15 +3,6 @@ const audio = document.getElementById("custom-audio");
 const errorMessage = document.getElementById("error-message");
 const buttonText = document.querySelector(".button-text");
 
-// iOS требует взаимодействия пользователя для воспроизведения аудио
-document.addEventListener(
-  "click",
-  function () {
-    // Это пустое событие нужно для разблокировки аудио на iOS
-  },
-  { once: true }
-);
-
 // Обработчик клика
 audioButton.addEventListener("click", function (e) {
   e.preventDefault();
