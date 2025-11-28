@@ -21,14 +21,16 @@
           <span class="button-icon">▶</span>
           <span class="button-text">Включите музыку</span>
         </button>
-        <!-- Используем MP3 для лучшей совместимости с iOS -->
-        <audio id="custom-audio" preload="auto">
-          <source
-            src="https://dl.dropbox.com/scl/fi/4r4mpmwkxlyg20uukeqsi/rocky_4_04.-Eye-Of-The-Tiger.mp3?rlkey=fpvl67t8bm23gssjfupiflyki&st=ksdeoh92&dl=0"
-            type="audio/mpeg"
-          />
+
+        <audio id="custom-audio" preload="none">
+          <source src="audio/Rocky_Eye_Of_The_Tiger.mp3" type="audio/mpeg" />
+          <source src="audio/Rocky_Eye_Of_The_Tiger.ogg" type="audio/ogg" />
           Ваш браузер не поддерживает аудио элемент.
         </audio>
+
+        <div id="loading-message" class="loading-message">
+          Загрузка музыки...
+        </div>
         <div id="error-message" class="error-message"></div>
       </div>
       <div class="container">
