@@ -140,6 +140,6 @@ document.addEventListener("DOMContentLoaded", function () {
   // Предзагрузка аудио при загрузке страницы (опционально)
   window.addEventListener("load", function () {
     // Можно раскомментировать для предзагрузки
-    // audio.load();
+    audio.load();
   });
 });
